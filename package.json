@@ -2,13 +2,17 @@
   "name": "enyo-console-spy",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Derek Tor",
   "license": "ISC",
   "peerDependencies": {
-     "sinon": "2.x"
+    "sinon": "git+https://github.com/sinonjs/sinon.git"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0"
   }
 }

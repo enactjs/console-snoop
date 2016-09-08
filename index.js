@@ -11,7 +11,7 @@ const watchErrorAndWarnings = () => {
 };
 
 // Get PropType Warnings
-const getPropWarnings = (regex, consoleObj) => {
+const getWarnings = (regex, consoleObj) => {
 	if (consoleObj.args.length > 0) {
 		return consoleObj.args[0].filter((message) => {
 			return (
@@ -25,12 +25,12 @@ const getPropWarnings = (regex, consoleObj) => {
 	}
 };
 
-const propErrors = (regex) => getPropWarnings(regex, console.error);
+const filterErrors = (regex) => getWarnings(regex, console.error);
 
-const propWarnings = (regex) => getPropWarnings(regex, console.warn);
+const filterWarnings = (regex) => getWarnings(regex, console.warn);
 
-const propErrorAndWarnings = (regex) =>
-	propWarnings(regex).concat(propErrors(regex));
+const filterErrorAndWarnings = (regex) =>
+	filterWarnings(regex).concat(filterErrors(regex));
 
 // Remove Spies & Restore Functions
 const restoreError = () => console.error.restore();
@@ -46,9 +46,9 @@ export {
 	watchWarn,
 	watchError,
 	watchErrorAndWarnings,
-	propWarnings,
-	propErrors,
-	propErrorAndWarnings,
+	filterWarnings,
+	filterErrors,
+	filterErrorAndWarnings,
 	restoreError,
 	restoreWarn,
 	restoreErrorAndWarnings
