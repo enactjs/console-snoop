@@ -9,7 +9,7 @@
   "author": "Derek Tor",
   "license": "ISC",
   "peerDependencies": {
-    "sinon": "git+https://github.com/sinonjs/sinon.git"
+    "sinon": "^2.0.0-pre.2"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
