@@ -1,5 +1,5 @@
 {
-  "name": "console-snoop",
+  "name": "enyo-console-spy",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
