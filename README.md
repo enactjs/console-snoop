@@ -5,7 +5,7 @@
 ### Installation
 
 ```
-npm install --save-dev enyojs/enact-console-spy
+npm install --save-dev console-snoop
 ```
 
 ### Copyright and License Information
