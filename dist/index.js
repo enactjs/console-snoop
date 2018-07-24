@@ -25,11 +25,13 @@ var watchErrorAndWarnings = function watchErrorAndWarnings() {
 	watchWarn();
 };
 
-// Get PropType Warnings
 var getWarnings = function getWarnings(regex, consoleObj) {
 	if (consoleObj.args.length > 0) {
 		return consoleObj.args[0].filter(function (message) {
-			return message && message.length > 0 && regex.test(message);
+			if (regex) {
+				return message && message.length > 0 && regex.test(message);
+			}
+			return message && message.length > 0;
 		});
 	} else {
 		return [];

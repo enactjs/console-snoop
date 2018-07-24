@@ -10,14 +10,19 @@ const watchErrorAndWarnings = () => {
 	watchWarn();
 };
 
-// Get PropType Warnings
 const getWarnings = (regex, consoleObj) => {
 	if (consoleObj.args.length > 0) {
 		return consoleObj.args[0].filter((message) => {
+			if(regex){
+				return (
+					message
+					&& message.length > 0
+					&& regex.test(message)
+				);
+			}
 			return (
 				message
 				&& message.length > 0
-				&& regex.test(message)
 			);
 		});
 	} else {
